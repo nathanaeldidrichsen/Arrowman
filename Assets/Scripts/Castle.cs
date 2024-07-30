@@ -54,10 +54,10 @@ public class Castle : MonoBehaviour
 
     public void OpenGate()
     {
-        if (GameManager.Instance.Gold >= 10)
+        if (GameManager.Instance.Gold >= 20)
         {
             anim.Play("open_gate");
-            GameManager.Instance.Gold -= 10;
+            GameManager.Instance.Gold -= 20;
         }
         else
         {
@@ -67,10 +67,10 @@ public class Castle : MonoBehaviour
 
     public void CloseGate()
     {
-        if (GameManager.Instance.Gold >= 5)
+        if (GameManager.Instance.Gold >= 10)
         {
             anim.Play("close_gate");
-            GameManager.Instance.Gold -= 5;
+            GameManager.Instance.Gold -= 10;
         }
         else
         {

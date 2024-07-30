@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 1;
         // Ensure only one instance of GameManager exists
         if (Instance != null && Instance != this)
         {
@@ -34,6 +33,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        PauseGame();
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+    }
 
     public void BuyArrow()
     {
@@ -83,6 +96,22 @@ public class GameManager : MonoBehaviour
             SoundManager.Instance.PlayError();
         }
     }
+
+            public void RebuildCastle()
+    {
+        if (gold >= 30) // Example cost
+        {
+            Gold -= 30; // Deduct cost
+            Health = 15;
+            SoundManager.Instance.PlayGetCoin();
+        }
+        else
+        {
+            SoundManager.Instance.PlayError();
+        }
+    }
+
+
 
 
     public void UpgradeDamage()

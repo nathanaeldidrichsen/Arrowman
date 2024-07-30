@@ -105,7 +105,7 @@ MonoBehaviour:
   goldDrop: 5
   hurtParticle: {fileID: 5217967316133245773, guid: 52d9c08d560d0a940a1578396797822d, type: 3}
   distanceToCastle: 0
-  stoppingRange: 2
+  stoppingRange: 2.88
   canStartMoving: 0
 --- !u!70 &7251043732760732664
 CapsuleCollider2D:
