@@ -12,7 +12,11 @@ public class WavesManager : MonoBehaviour
     private int currentWaveIndex = 0;
     private int enemiesSpawned = 0;
     private int enemiesAlive = 0;
+    private bool waveFullySpawned = false; // New flag to track if all enemies have spawned
+
     private bool waveInProgress = false;
+    private List<Enemy> currentWaveEnemies = new List<Enemy>(); // Track enemies for current wave
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +30,7 @@ public class WavesManager : MonoBehaviour
         if (currentWaveIndex < waves.Count)
         {
             waveInProgress = true;
+            waveFullySpawned = false; // Reset the flag for the new wave
             Wave currentWave = waves[currentWaveIndex];
             StartCoroutine(SpawnWave(currentWave));
         }
@@ -40,6 +45,7 @@ public class WavesManager : MonoBehaviour
     {
         enemiesSpawned = 0;
         enemiesAlive = wave.numberOfEnemies;
+        currentWaveEnemies.Clear(); // Clear the list for the current wave
 
         while (enemiesSpawned < wave.numberOfEnemies)
         {
@@ -47,11 +53,14 @@ public class WavesManager : MonoBehaviour
             enemiesSpawned++;
             yield return new WaitForSeconds(wave.spawnInterval); // Wait before spawning next enemy
         }
+
+        waveFullySpawned = true; // Mark the wave as fully spawned
     }
 
     // Method to spawn an enemy
     private void SpawnEnemy(Wave wave)
     {
+        SoundManager.Instance.PlaySpawnWave();
         // Choose a random spawn point
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
@@ -59,10 +68,17 @@ public class WavesManager : MonoBehaviour
         GameObject enemyPrefab = wave.enemyPrefabs[Random.Range(0, wave.enemyPrefabs.Count)];
 
         // Instantiate enemy at the chosen spawn point
-        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemyGO = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        Enemy enemy = enemyGO.GetComponent<Enemy>();
+
+        // Add the enemy to the current wave list
+        currentWaveEnemies.Add(enemy);
 
         // Subscribe to the enemy's death event
-        enemy.GetComponent<Enemy>().OnDeath += OnEnemyDeath;
+        enemy.OnDeath += OnEnemyDeath;
+
+        // Start initial move so they don't stack
+        enemy.StartMoving();
     }
 
     // Event handler for when an enemy dies
@@ -75,6 +91,17 @@ public class WavesManager : MonoBehaviour
             waveInProgress = false;
             currentWaveIndex++;
             StartCoroutine(StartWaveAfterDelay(timeBetweenWaves));
+        }
+    }
+
+    // Notify the wave to move when arrow hits
+    public void NotifyWaveToMove()
+    {
+        if (!waveFullySpawned) return; // Only allow movement if the wave is fully spawned
+
+        foreach (Enemy enemy in currentWaveEnemies)
+        {
+            enemy.StartLimitedMovement();
         }
     }
 
