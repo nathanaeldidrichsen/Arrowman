@@ -16,7 +16,11 @@ public class Enemy : MonoBehaviour
     private float lastAttackTime = 0f; // Track the last time the enemy attacked
     [SerializeField] private GameObject hurtParticle;
     [SerializeField] private float distanceToCastle;
-        private float randomAttackDelay = 0f; // Random delay before starting the first attack
+    [SerializeField] private Animator anim;
+    [SerializeField] private Rigidbody2D rb;
+
+
+    private float randomAttackDelay = 0f; // Random delay before starting the first attack
     private float randomCooldownVariation = 0f; // Random variation in attack cooldown
 
     public float stoppingRange = 1f; // Range within which the enemy starts attacking
@@ -27,30 +31,28 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-                // Introduce a small random delay and cooldown variation for desynchronizing attacks
+        // Introduce a small random delay and cooldown variation for desynchronizing attacks
         randomAttackDelay = UnityEngine.Random.Range(0f, 0.5f);
         randomCooldownVariation = UnityEngine.Random.Range(-0.2f, 0.2f);
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
-
+        // Check if the enemy is within the stopping range of the castle
         if (Castle.Instance != null)
         {
             distanceToCastle = Vector2.Distance(transform.position, Castle.Instance.transform.position);
         }
 
-        if (canStartMoving)
+        // Only move if not attacking and not within stopping range
+        if (canStartMoving && !isAttacking && distanceToCastle > stoppingRange)
         {
-            // Only move if not attacking and not within stopping range
-            if (!isAttacking && distanceToCastle > stoppingRange)
-            {
-                Move();
-            }
-
-            // Check and attack the castle if within range
-            CheckAndAttackCastle();
+            Move();
         }
+
+        anim.SetBool("isWalking", false); // Walking when velocity is significant and not attacking
+        CheckAndAttackCastle();
     }
 
     private void Move()
@@ -60,18 +62,20 @@ public class Enemy : MonoBehaviour
         {
             if (canMoveCounter < canMoveTime)
             {
+
+                anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 canMoveCounter += Time.deltaTime;
             }
         }
         else
         {
+            anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
     }
     private void CheckAndAttackCastle()
     {
-        // Check if the enemy is within the stopping range of the castle
         if (distanceToCastle <= stoppingRange)
         {
             // Begin attack if within stopping range and not currently attacking
@@ -80,6 +84,19 @@ public class Enemy : MonoBehaviour
                 isAttacking = true;
                 Invoke(nameof(PerformAttack), randomAttackDelay); // Start attack with a delay
             }
+        }
+    }
+
+    private void UpdateAnimation()
+    {
+        // Update the animator's parameters
+        if (anim != null)
+        {
+            // Set the movement animation
+            anim.SetBool("isWalking", rb.velocity.magnitude > 0.1f && !isAttacking); // Walking when velocity is significant and not attacking
+
+            // Set the attacking animation
+            // anim.SetBool("isAttacking", isAttacking); // Set attacking state
         }
     }
 
@@ -146,7 +163,7 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Lava"))
+        if (other.CompareTag("Lava"))
         {
             TakeDamage(30);
         }

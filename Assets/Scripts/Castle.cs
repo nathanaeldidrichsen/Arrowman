@@ -31,6 +31,8 @@ public class Castle : MonoBehaviour
     {
         SoundManager.Instance.PlayCastleHurt();
         gameManager.Health -= damage;
+        anim.SetTrigger("hurt");
+
         if (gameManager.Health <= 0)
         {
             gameManager.Health = 0;

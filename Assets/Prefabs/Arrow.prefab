@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2452452698437139303}
   - component: {fileID: 4161271819763361466}
   - component: {fileID: 1816678238453784469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arrow
   m_TagString: Arrow
   m_Icon: {fileID: 0}
@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c07ad872eca04defb158ed2ef3dc7d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowDamage: 0
 --- !u!70 &1816678238453784469
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5062291689715108921}
   - component: {fileID: 7663200238700730725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7266450975818066418}
   - component: {fileID: 4241097678587521340}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
