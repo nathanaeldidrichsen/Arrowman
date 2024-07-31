@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
             Move();
         }
 
-        anim.SetBool("isWalking", false); // Walking when velocity is significant and not attacking
+        // anim.SetBool("isWalking", false); // Walking when velocity is significant and not attacking
         CheckAndAttackCastle();
     }
 
@@ -63,14 +63,14 @@ public class Enemy : MonoBehaviour
             if (canMoveCounter < canMoveTime)
             {
 
-                anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
+                // anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 canMoveCounter += Time.deltaTime;
             }
         }
         else
         {
-            anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
+            // anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
     }
