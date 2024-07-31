@@ -101,11 +101,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   damage: 1
-  moveSpeed: 1.24
+  moveSpeed: 0.14
   goldDrop: 10
+  canMoveTime: 3
   hurtParticle: {fileID: 5217967316133245773, guid: 52d9c08d560d0a940a1578396797822d, type: 3}
   distanceToCastle: 0
-  stoppingRange: 3.62
+  anim: {fileID: 0}
+  rb: {fileID: 0}
+  stoppingRange: 0.56
   canStartMoving: 0
 --- !u!70 &8077316636895650553
 CapsuleCollider2D:
@@ -139,8 +142,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.003376484, y: 0.5553053}
-  m_Size: {x: 0.40817928, y: 1.1106106}
+  m_Offset: {x: 0.0036745071, y: 0.05633638}
+  m_Size: {x: 0.052700043, y: 0.11267276}
   m_Direction: 0
 --- !u!50 &4076871054773104527
 Rigidbody2D:

@@ -10,6 +10,7 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private TextMeshProUGUI damageText;
     [SerializeField] private GameObject loosePanel;
+    private Animator anim;
     public static HUD Instance { get; private set; }
 
     private void Awake()
@@ -28,6 +29,7 @@ public class HUD : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         gameManager = GameManager.Instance;
         player = Player.Instance;
 
@@ -74,6 +76,7 @@ public class HUD : MonoBehaviour
     private void UpdateGoldText(int newGold)
     {
         goldText.text = $"Gold: {newGold}";
+        anim.Play("get_gold");
     }
 
     private void UpdateHealthText(int newHealth)

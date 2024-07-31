@@ -43,9 +43,45 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Layer-6
+    uniqueID: 642706191
+    locked: 0
+  - name: Layer-5
+    uniqueID: 1144571955
+    locked: 0
+  - name: Layer-4
+    uniqueID: 2838011741
+    locked: 0
+  - name: Layer-3
+    uniqueID: 3437824833
+    locked: 0
+  - name: Layer-2
+    uniqueID: 1987311911
+    locked: 0
+  - name: Layer-1
+    uniqueID: 4125043043
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Enemy
     uniqueID: 428480725
+    locked: 0
+  - name: Layer1
+    uniqueID: 4216503367
+    locked: 0
+  - name: Layer2
+    uniqueID: 3768640031
+    locked: 0
+  - name: Layer3
+    uniqueID: 210716385
+    locked: 0
+  - name: Layer4
+    uniqueID: 4114028723
+    locked: 0
+  - name: Layer5
+    uniqueID: 4274172167
+    locked: 0
+  - name: Layer6
+    uniqueID: 1135932477
     locked: 0

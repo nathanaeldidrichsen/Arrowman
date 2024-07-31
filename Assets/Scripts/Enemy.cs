@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public int damage = 1;
     public float moveSpeed = 2f;
     public int goldDrop = 1;
-    private float canMoveTime = 1f; // Tracks how long the enemy can move
+    [SerializeField] private float canMoveTime = 1f; // Tracks how long the enemy can move
     private float canMoveCounter = 0;
     private bool isAttacking = false; // To track if currently attacking
     private float attackCooldown = 2f; // Cooldown time between attacks
@@ -50,8 +50,10 @@ public class Enemy : MonoBehaviour
         {
             Move();
         }
-
-        anim.SetBool("isWalking", false); // Walking when velocity is significant and not attacking
+        // if (anim != null)
+        // {
+        //     anim.SetBool("isWalking", false); // Walking when velocity is significant and not attacking
+        // }
         CheckAndAttackCastle();
     }
 
@@ -62,15 +64,14 @@ public class Enemy : MonoBehaviour
         {
             if (canMoveCounter < canMoveTime)
             {
-
-                anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
+                WalkAnimation();
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 canMoveCounter += Time.deltaTime;
             }
         }
         else
         {
-            anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
+            WalkAnimation();
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
     }
@@ -87,6 +88,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void WalkAnimation()
+    {
+        // if (anim != null)
+        // {
+        //     anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
+        // }
+    }
     private void UpdateAnimation()
     {
         // Update the animator's parameters
