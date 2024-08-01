@@ -10,6 +10,8 @@ public class HUD : MonoBehaviour
     [SerializeField] private TextMeshProUGUI goldText;
     [SerializeField] private TextMeshProUGUI damageText;
     [SerializeField] private GameObject loosePanel;
+    [SerializeField] private GameObject winPanel;
+
     private Animator anim;
     public static HUD Instance { get; private set; }
 
@@ -57,7 +59,6 @@ public class HUD : MonoBehaviour
             gameManager.OnHealthChanged -= UpdateHealthText;
             gameManager.OnArrowsChanged -= UpdateArrowsText;
             player.OnDamageChanged -= UpdateDamageText;
-
         }
     }
 
@@ -65,6 +66,13 @@ public class HUD : MonoBehaviour
     {
         // activate some loose menu
         loosePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+        public void DisplayWonPanel()
+    {
+        // activate some loose menu
+        winPanel.SetActive(true);
         Time.timeScale = 0;
     }
 

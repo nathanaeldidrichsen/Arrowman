@@ -42,10 +42,10 @@ public class Castle : MonoBehaviour
 
     public void PourLava()
     {
-        if (GameManager.Instance.Gold >= 40)
+        if (GameManager.Instance.Gold >= 30)
         {
             anim.Play("pour_lava 1");
-            GameManager.Instance.Gold -= 40;
+            GameManager.Instance.Gold -= 30;
         }
         else
         {

@@ -28,8 +28,9 @@ public class Arrow : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0f;
             rb.isKinematic = true;
+            this.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            this.gameObject.GetComponentInChildren<BoxCollider2D>().enabled = false;
         }
-
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -38,6 +39,7 @@ public class Arrow : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground") && !hasCollided)
         {
             SoundManager.Instance.PlayArrowHitGround();
+            isStuck = true;
             // collisionCounter++;
             // Stop the rotation when the arrow collides with any object other than the player
         }
@@ -52,6 +54,7 @@ public class Arrow : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy") && !hasCollided)
         {
             GameManager.Instance.Arrows++;
+            GameManager.Instance.cameraShake.ScreenShake();
             collision.gameObject.GetComponent<Enemy>().TakeDamage(arrowDamage);
             SoundManager.Instance.PlayArrowHitGround();
             SoundManager.Instance.PlayArrowHitEnemy();

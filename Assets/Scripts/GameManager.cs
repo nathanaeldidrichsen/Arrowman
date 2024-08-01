@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-        public void MoveToTower()
+    public void MoveToTower()
     {
         if (gold >= 20 && isAtGate) // Example cost
         {
@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-            public void RebuildCastle()
+    public void RebuildCastle()
     {
         if (gold >= 30) // Example cost
         {
@@ -164,14 +164,17 @@ public class GameManager : MonoBehaviour
             OnHealthChanged?.Invoke(health);  // Trigger the event
             LostGame();
             //Play lost sound
-
         }
     }
 
     public void LostGame()
     {
-            HUD.Instance.DisplayLoosePanel();
+        HUD.Instance.DisplayLoosePanel();
+    }
 
+    public void WonGame()
+    {
+        HUD.Instance.DisplayWonPanel();
     }
 
     public int Health

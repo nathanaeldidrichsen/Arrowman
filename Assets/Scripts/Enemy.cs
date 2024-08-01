@@ -18,16 +18,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float distanceToCastle;
     [SerializeField] private Animator anim;
     [SerializeField] private Rigidbody2D rb;
-
-
     private float randomAttackDelay = 0f; // Random delay before starting the first attack
     private float randomCooldownVariation = 0f; // Random variation in attack cooldown
-
     public float stoppingRange = 1f; // Range within which the enemy starts attacking
-
     public bool canStartMoving = false; // Flag to start moving
     private bool limitedMovementActive = false; // Flag to start limited movement counter
     private bool isWithinRange;
+    public EnemyType enemyType = EnemyType.GroundEnemy;
+
+    public enum EnemyType
+    {
+        AirEnemy,
+        GroundEnemy
+    }
 
     void Start()
     {
@@ -50,10 +53,6 @@ public class Enemy : MonoBehaviour
         {
             Move();
         }
-        // if (anim != null)
-        // {
-        //     anim.SetBool("isWalking", false); // Walking when velocity is significant and not attacking
-        // }
         CheckAndAttackCastle();
     }
 
@@ -64,14 +63,12 @@ public class Enemy : MonoBehaviour
         {
             if (canMoveCounter < canMoveTime)
             {
-                WalkAnimation();
                 transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
                 canMoveCounter += Time.deltaTime;
             }
         }
         else
         {
-            WalkAnimation();
             transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
         }
     }
@@ -85,26 +82,6 @@ public class Enemy : MonoBehaviour
                 isAttacking = true;
                 Invoke(nameof(PerformAttack), randomAttackDelay); // Start attack with a delay
             }
-        }
-    }
-
-    private void WalkAnimation()
-    {
-        // if (anim != null)
-        // {
-        //     anim.SetBool("isWalking", true); // Walking when velocity is significant and not attacking
-        // }
-    }
-    private void UpdateAnimation()
-    {
-        // Update the animator's parameters
-        if (anim != null)
-        {
-            // Set the movement animation
-            anim.SetBool("isWalking", rb.velocity.magnitude > 0.1f && !isAttacking); // Walking when velocity is significant and not attacking
-
-            // Set the attacking animation
-            // anim.SetBool("isAttacking", isAttacking); // Set attacking state
         }
     }
 

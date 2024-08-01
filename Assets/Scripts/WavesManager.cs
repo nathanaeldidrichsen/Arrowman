@@ -36,7 +36,7 @@ public class WavesManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("All waves completed!");
+            GameManager.Instance.WonGame();
         }
     }
 
@@ -61,8 +61,14 @@ public class WavesManager : MonoBehaviour
     private void SpawnEnemy(Wave wave)
     {
         SoundManager.Instance.PlaySpawnWave();
-        // Choose a random spawn point
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+        Transform spawnPoint = spawnPoints[0];
+
+        // If airborne choose random spawnpoint else keep 1st spawn point
+        if (wave.waveName == "Air")
+        {
+            spawnPoint = spawnPoints[Random.Range(1, spawnPoints.Length)];
+        }
 
         // Choose a random enemy prefab
         GameObject enemyPrefab = wave.enemyPrefabs[Random.Range(0, wave.enemyPrefabs.Count)];
