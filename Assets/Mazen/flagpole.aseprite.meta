@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6162a24c5e567f4d813e51e65ff9f7e
+guid: 65d91c6d01768cf46839f7959a48dc54
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: stickbanner
+  - name: flagpole_Frame_0
     originalName: 
-    pivot: {x: 0.46666667, y: -0.039473686}
+    pivot: {x: 0.3548387, y: -0.07894737}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 15
+      width: 31
       height: 76
-    spriteID: 7dee9fb2e03f7c94ea742cc096f60db2
+    spriteID: adccc28e88b3b824c952bbd4470366a1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -141,28 +141,144 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: flagpole_Frame_1
+    originalName: 
+    pivot: {x: 0.37931034, y: -0.07894737}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 4
+      width: 29
+      height: 76
+    spriteID: e78c4f4681d3c8e4682a6cb5d9b41ee8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 4}
+  - name: flagpole_Frame_2
+    originalName: 
+    pivot: {x: 0.36666664, y: -0.07894737}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 30
+      height: 76
+    spriteID: 7ea2640db94631b4b865a2f219725073
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
+  - name: flagpole_Frame_3
+    originalName: 
+    pivot: {x: 0.3548387, y: -0.07894737}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 88
+      width: 31
+      height: 76
+    spriteID: ad95287911d803143baf7b9fcb2b1130
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 88}
+  - name: flagpole_Frame_4
+    originalName: 
+    pivot: {x: 0.37931034, y: -0.07894737}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 43
+      y: 88
+      width: 29
+      height: 76
+    spriteID: 031a121a2be947148971c5efb5ad3c0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 43, y: 88}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -553713072
-    name: stickbanner
+    guid: 2086865258
+    name: flagpole
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: stickbanner
+    - name: flagpole_Frame_0
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 3
-        width: 15
+        x: 14
+        y: 6
+        width: 31
         height: 76
-      spriteId: 7dee9fb2e03f7c94ea742cc096f60db2
+      spriteId: adccc28e88b3b824c952bbd4470366a1
+    - name: flagpole_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 6
+        width: 29
+        height: 76
+      spriteId: e78c4f4681d3c8e4682a6cb5d9b41ee8
+    - name: flagpole_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 6
+        width: 30
+        height: 76
+      spriteId: 7ea2640db94631b4b865a2f219725073
+    - name: flagpole_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 6
+        width: 31
+        height: 76
+      spriteId: ad95287911d803143baf7b9fcb2b1130
+    - name: flagpole_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 14
+        y: 6
+        width: 29
+        height: 76
+      spriteId: 031a121a2be947148971c5efb5ad3c0b
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 20, y: 80}
+  canvasSize: {x: 50, y: 94}

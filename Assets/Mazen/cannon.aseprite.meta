@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6162a24c5e567f4d813e51e65ff9f7e
+guid: a3fe912a3298af84e95e356efbdb16ed
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: stickbanner
+  - name: cannon
     originalName: 
-    pivot: {x: 0.46666667, y: -0.039473686}
+    pivot: {x: 0.48245612, y: -0.24000001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 15
-      height: 76
-    spriteID: 7dee9fb2e03f7c94ea742cc096f60db2
+      width: 57
+      height: 25
+    spriteID: c10d9c09c157fc84ea2864a6c5e0f43c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -553713072
-    name: stickbanner
+    guid: -811015713
+    name: cannon
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: stickbanner
+    - name: cannon
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 3
-        width: 15
-        height: 76
-      spriteId: 7dee9fb2e03f7c94ea742cc096f60db2
+        x: 4
+        y: 6
+        width: 57
+        height: 25
+      spriteId: c10d9c09c157fc84ea2864a6c5e0f43c
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 20, y: 80}
+  canvasSize: {x: 63, y: 40}

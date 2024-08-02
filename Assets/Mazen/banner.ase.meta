@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a6162a24c5e567f4d813e51e65ff9f7e
+guid: 0fcd36823d94b4f4db88c1d46ce2fb51
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,9 +121,9 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: stickbanner
+  - name: banner
     originalName: 
-    pivot: {x: 0.46666667, y: -0.039473686}
+    pivot: {x: 0.53333336, y: -0.037037034}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -131,8 +131,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 15
-      height: 76
-    spriteID: 7dee9fb2e03f7c94ea742cc096f60db2
+      height: 27
+    spriteID: 04eae30784ec37244ae067419672209a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -553713072
-    name: stickbanner
+    guid: -35250636
+    name: banner
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: stickbanner
+    - name: banner
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 3
-        y: 3
+        x: 1
+        y: 1
         width: 15
-        height: 76
-      spriteId: 7dee9fb2e03f7c94ea742cc096f60db2
+        height: 27
+      spriteId: 04eae30784ec37244ae067419672209a
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 20, y: 80}
+  canvasSize: {x: 18, y: 29}
