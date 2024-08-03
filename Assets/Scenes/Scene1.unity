@@ -2757,13 +2757,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spiketorch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: ce79b120647ca0f429fcd6139d59729c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ce79b120647ca0f429fcd6139d59729c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.44123852
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ce79b120647ca0f429fcd6139d59729c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0074107647
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ce79b120647ca0f429fcd6139d59729c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3571,6 +3575,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 5d9b11209d9b79e4380d8f88eddcd64a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 5d9b11209d9b79e4380d8f88eddcd64a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.2608666
@@ -3581,7 +3589,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 5d9b11209d9b79e4380d8f88eddcd64a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.282
+      value: -2.759
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 5d9b11209d9b79e4380d8f88eddcd64a, type: 3}
       propertyPath: m_LocalPosition.y
