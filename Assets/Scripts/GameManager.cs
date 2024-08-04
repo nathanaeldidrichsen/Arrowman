@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        PauseGame();
+        // PauseGame();
     }
 
     public void PauseGame()
